@@ -1,0 +1,479 @@
+/*=============== GOOGLE FONTS ===============*/
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --hue: 14;
+  --first-color: hsl(233, 47%, 7%);
+  --first-colo-alt: hsl(277, 64%, 61%);
+  --title-color: hsl(0, 0%, 100%);
+  --text-color: hsla(0, 0%, 100%, 0.6);
+  --text-color-light: hsla(0, 0%, 100%, 0.75);
+
+  --body-color: hsl(233, 47%, 7%);
+  --container-color: hsl(244, 38%, 16%);
+
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Inter', sans-serif; /* 400, 700 only */
+  --body-font-alt: 'Lexend Deca', sans-serif; /* 400 only */
+
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 400;
+  --font-semi-bold: 700;
+
+  /*========== Margins Bottom ==========*/
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-2-75: 2.75rem;
+  --mb-3: 3rem;
+
+
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 992px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6; /* (for example) */
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html {
+  line-height: 1.4;
+  display: block;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a, abbr, acronym, address, applet,
+article, aside, audio, b, big,
+blockquote, body, canvas, caption,
+center, cite, code, dd, del, details,
+dfn, div, dl, dt, em, embed, fieldset,
+figcaption, figure, footer, form, h1, h2,
+h3, h4, h5, h6, header, hgroup, html, i,
+iframe, img, ins, kbd, label, legend, li,
+mark, menu, nav, object, ol, output, p, pre,
+q, ruby, s, samp, section, small, span, strike,
+strong, sub, summary, sup, table, tbody, td,
+tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+h1,h2,h3,h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--h1-font-size);
+  display: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc; /* Zum Beispiel */
+    margin: 1em 0;
+    padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button{
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+:focus { /* set here the settings for the focus (:focus = border when you press tab on the website) */
+
+}
+
+* ::-webkit-scrollbar-track {  /* set here the custom scrollbar for the website */
+
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+
+.text-left {
+  text-align: left;
+}
+
+.img-responsiv { /* Ein Bild responsiv machen */
+  width: 100%;
+  height: auto;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.disable-select {   /* Die Klasse dem ELement zuweisen, wenn der Text nicht gehighlightet werden kann  */
+  user-select: none;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+}
+
+.center-block { /* Zentriert jegliches Element  */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.section{
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-2);
+  text-align: center;
+}
+
+.section__title__text{
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-2-75);
+  text-align: center;
+}
+
+.section__title__button{
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-3);
+  text-align: center;
+}
+
+.btn-center { /* Packen wir ein Div mit dieser Klasse !um! ein Anker Tag, ist der Anker Tag mittig im Div. */
+  width: 100%;
+  text-align: center;
+
+}
+
+.btn {
+  color: ; /* Schriftfarbe Button */
+  background-color: ; /* Hintergrundfarbe des Buttons */
+  font-size: ; /* Schrift Größe im Button */
+  text-decoration: none; /* das "none" gegebenenfalls ersetzen, falls gewünscht */
+  border: ; /* falls gewünscht wird hier die Border festgelegt */
+  padding: ; /* Größe des Buttons festlegen */
+  transition: 0.3s ease; /* <-- nur ein Beispiel | das ist Übergang bei zum Beispiel dem Hover Effect */
+  text-align: center; /* Text mittig im Button platzieren */
+}
+
+
+.btn:hover {
+
+}
+
+/*=============== LAYOUT ===============*/
+
+
+.container{
+  border-radius: 10px;
+  width: 1080px;
+  min-height: 446px;
+  background-color: var(--container-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+
+.left-text-flex {
+  padding: 60px 100px 100px 60px;
+  width: 50%;
+  height: 446px;
+}
+
+.top {
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+  font-size: 2.1rem;
+  font-family: 'Lexend Deca', sans-serif;;
+}
+
+.top span {
+  color: var(--first-colo-alt);
+}
+
+.center {
+  margin-bottom: 4rem;
+}
+
+.right-img-flex {
+  width: 50%;
+  height: 446px;
+  min-height: 446px;
+  background-color: grey;
+  background-image: linear-gradient(rgba(170, 92, 219, 0.45), rgba(170, 92, 219, 0.45)),  url("../img/image-header-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  font-weight: 700;
+  color: var(--title-color);
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.item span {
+  font-weight: normal;
+  color: var(--text-color);
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1025px) {
+
+    .container{
+    border-radius: 10px;
+    width: 90%;
+    background-color: var(--container-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+    .right-img-flex {
+    width: 100%;
+    height: 446px;
+    min-height: 446px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+   }
+
+   .full-height {
+    height: 80vh;
+   }
+
+   .left-text-flex {
+     padding: 40px 100px 100px 60px;
+     width: 100%;
+     height: 446px;
+     text-align: center;
+   }
+
+   .data {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .center {
+    margin-bottom: 2rem;
+  }
+
+  .item {
+    margin-bottom: 1rem;
+  }
+
+}
+
+@media (max-width: 580px) {
+  .container {
+    height: 600px;
+  }
+
+  .right-img-flex {
+    width: 100%;
+    height: 350px;
+    min-height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: -200px;
+  }
+
+  .full-height {
+    height: 100vh;
+  }
+
+  .left-text-flex {
+    padding: 30px 20px 30px 20px;
+    width: 100%;
+    height: 446px;
+    text-align: center;
+  }
+
+}
+
+  @media (max-width: 390px) {
+    .right-img-flex {
+      height: 288px;
+      margin-top: -200px;
+    }
+
+    .container {
+      height: 700px;
+    }
+
+  }
+
+  @media (max-width: 376px) {
+    .right-img-flex {
+      height: 278px;
+      margin-top: -200px;
+    }
+
+    .container {
+      height: 630px;
+    }
+
+    .full-height {
+      height: 118vh;
+    }
+
+    .item {
+      margin-bottom: 1.6rem;
+    }
+
+    .top {
+      line-height: 1.2;
+      font-size: 1.8rem;
+    }
+
+  }
